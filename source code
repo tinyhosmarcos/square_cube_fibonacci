@@ -1,0 +1,54 @@
+#include <iostream>
+#include "libreria.h"
+
+using namespace std;
+int x;
+int y;
+int s=-1;
+int main()
+{
+	while (s!=0)
+	{
+		cout << "Ingrese 1 para sacar el cuadrado:\n";
+		cout << "Ingrese 2 para sacar el cubo:\n";
+		cout << "Ingrese 3 para hallar el fibonacci:\n";
+		cout << "Ingrese 0 para finalizar:\n ";
+		cin>>s;
+		if (s==1){
+			cout<<"Ingrese un numero\n";
+			cin>>x;
+			y=square(x);
+		}
+		if (s==2){
+			cout<<"Ingrese un numero\n";
+			cin>>x;
+			y=cube(x);
+		}
+		if (s==3){
+			cout<<"Ingrese un numero\n";
+			cin>>x;
+			y=fibonacci(x);
+		}
+		cout<<"El valor es :"<<y<<'\n';
+	}
+		
+	
+	return 0;
+}
+
+int cube(int x)	
+{
+	return x*square(x);
+}
+int square(int x)	
+{
+	return x*x;
+}
+int fibonacci(int x){
+	if (x==0 or x==1){
+		return 1;
+	}
+	else{
+		return fibonacci(x-2)+fibonacci(x-1);
+	}
+}
